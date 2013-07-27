@@ -3,19 +3,23 @@
 //  AvoidSquares
 //
 //  Created by Clay Ewing on 7/9/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+
 #pragma once
 #include "ofMain.h"
+#include "ofxRetinaImage.h"
 
 class Enemy {
 public:
 	
 	void display();
-	bool hit();
-	void create(int x, int y, int speed, int width);
-	int x, y;
+	void create(float x, float y, float speed, int radius);
+	float x, y;
+    ofPoint seek;
     int r,g,b;
-	int width, height;
+	int radius;
+    float distanceToProtagonist;
+    bool hit;
+    ofxRetinaImage *image;
+
     int speed;
 };

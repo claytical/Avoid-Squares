@@ -3,16 +3,16 @@
 //  AvoidSquares
 //
 //  Created by Clay Ewing on 7/9/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+
 #pragma once
 #include "ofMain.h"
+#include "ofxRetinaImage.h"
+#include "collectable.h"
+#include "enemy.h"
 
 #define HEALTHY     0
-#define WOUNDED     1
-#define DISFIGURED  2
-#define MANGLED     3
-#define DEAD        4
+#define DEAD        12
+#define LINE_ANIMATION_SPEED 1.5
 
 class Protagonist {
     
@@ -22,10 +22,16 @@ public:
 	void create(int x, int y, int radius);
     void change(int amount);
     void moveTo(int x, int y);
-//    vector<ofImage> protags;
-//    ofImage protoUnhealthy;
-	int x, y;
+    bool collide(Collectable c);
+    bool collide(Enemy e);
+    int collectEdge();
+	float x, y;
     int r,g,b;
-	int radius;
+	int width, height;
     int sides;
+    int edgeCounter;
+    bool lineAnimation[4];
+    ofPoint edges[4];
+    float animatedLine[4];
+
 };

@@ -1,0 +1,7 @@
+<name>Badlands</name>
+<author>Clay Ewing</author>
+<complete>5</complete>
+<speed>-1</speed>
+<multiplier>1.1</multiplier>
+<file>enemy.xml</file>
+<file>collect.xml</file>
